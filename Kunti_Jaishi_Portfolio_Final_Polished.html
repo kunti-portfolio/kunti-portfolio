@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kunti Jaishi | Graduate Registered Nurse</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #173633;
+  --deep: #173633;
+  --teal: #14796f;
+  --teal-light: #22a99a;
+  --teal-pale: #d8f3ef;
+  --mint: #1b8f84;
+  --mint-light: #43bdb2;
+  --mint-pale: #e1f7f4;
+  --cream: #f6fbfa;
+  --paper: #ffffff;
+  --mist: #edf8f6;
+  --border: #c6e7e2;
+  --text: #173633;
+  --sub: #456f6a;
+  --white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--mist); }
+::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 2px; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(242,251,250,0.97);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 3rem;
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 600;
+  color: #152e2b; letter-spacing: 0.02em;
+}
+.nav-logo span { color: var(--teal); font-style: italic; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--sub);
+  text-decoration: none; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--teal); }
+.nav-cta {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: #1a7a6e; color: #173633;
+  padding: 0.4rem 1rem; border-radius: 4px;
+  text-decoration: none; transition: background 0.2s;
+}
+.nav-cta:hover { background: #152e2b; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  padding-top: 56px;
+  overflow: hidden;
+}
+.hero-left {
+  background: linear-gradient(135deg, #f7fcfb 0%, #e2f6f3 100%);
+  padding: 5rem 4rem 5rem 5rem;
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.hero-left::before {
+  content: '';
+  position: absolute; top: -120px; left: -120px;
+  width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(20,121,111,0.12) 0%, transparent 70%);
+}
+.hero-left::after {
+  content: '';
+  position: absolute; bottom: -80px; right: -80px;
+  width: 300px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(34,169,154,0.12) 0%, transparent 70%);
+}
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 0.75rem;
+  margin-bottom: 2rem; position: relative; z-index: 1;
+}
+.hero-eyebrow-line {
+  width: 40px; height: 1px; background: var(--teal);
+}
+.hero-eyebrow span {
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--teal);
+}
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  font-weight: 700; line-height: 0.95;
+  color: #173633;
+  margin-bottom: 1.2rem;
+  position: relative; z-index: 1;
+}
+.hero-name em {
+  font-style: italic; color: #14796f;
+  display: block;
+}
+.hero-title {
+  font-size: 0.9rem; color: #456f6a;
+  letter-spacing: 0.04em; margin-bottom: 2.5rem;
+  position: relative; z-index: 1;
+}
+.hero-contact-list {
+  list-style: none; display: flex; flex-direction: column;
+  gap: 0.6rem; margin-bottom: 3rem;
+  position: relative; z-index: 1;
+}
+.hero-contact-list li a {
+  font-size: 0.83rem; color: #355f5a;
+  text-decoration: none; display: flex; align-items: center; gap: 0.75rem;
+  transition: color 0.2s;
+}
+.hero-contact-list li a:hover { color: var(--teal-light); }
+.hero-contact-list li a .icon {
+  width: 28px; height: 28px; border-radius: 6px;
+  background: #d8f3ef;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem; flex-shrink: 0;
+}
+.hero-badges {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  position: relative; z-index: 1;
+}
+.badge {
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem; border-radius: 3px;
+}
+.badge-teal { background: #d8f3ef; color: #14796f; border: 1px solid #95d8d0; }
+.badge-sage { background: #e1f7f4; color: #14796f; border: 1px solid #95d8d0; }
+.badge-white { background: #ffffff; color: #355f5a; border: 1px solid #c6e7e2; }
+
+.hero-right {
+  background: var(--paper);
+  padding: 4rem 4rem 4rem 4rem;
+  display: flex; flex-direction: column; justify-content: center;
+  gap: 1.5rem;
+}
+.hero-stat-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px; padding: 1.5rem 2rem;
+  display: flex; align-items: center; gap: 1.5rem;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.hero-stat-card:hover {
+  box-shadow: 0 6px 32px rgba(26,122,110,0.1);
+  transform: translateX(4px);
+}
+.hero-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem; font-weight: 700;
+  color: var(--teal); line-height: 1; flex-shrink: 0;
+}
+.hero-stat-body {}
+.hero-stat-label {
+  font-size: 0.83rem; font-weight: 600;
+  color: #152e2b; margin-bottom: 0.2rem;
+}
+.hero-stat-sub {
+  font-size: 0.75rem; color: var(--sub); line-height: 1.4;
+}
+.hero-stat-divider {
+  width: 3px; height: 50px; border-radius: 2px;
+  background: linear-gradient(to bottom, #1a7a6e, #29a89a);
+  flex-shrink: 0;
+}
+
+
+.hero-strong-line {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #173633;
+  max-width: 620px;
+  margin: -1.3rem 0 1.6rem 0;
+  line-height: 1.55;
+  position: relative;
+  z-index: 1;
+}
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1.2rem;
+}
+.skill-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  background: #e1f7f4;
+  color: #14796f;
+  border: 1px solid #95d8d0;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+}
+.achievement-strip {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--teal);
+  border-radius: 14px;
+  padding: 1.5rem 1.8rem;
+  margin-top: 2rem;
+  box-shadow: 0 8px 28px rgba(20,121,111,0.07);
+}
+.achievement-strip strong {
+  color: #14796f;
+}
+
+/* ── SECTION BASE ── */
+section { padding: 5.5rem 0; }
+.container { max-width: 1080px; margin: 0 auto; padding: 0 3rem; }
+.section-label {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--teal);
+  display: flex; align-items: center; gap: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+.section-label::after {
+  content: ''; flex: 1; height: 1px; background: #d4f0ec;
+}
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 600; color: #152e2b;
+  margin-bottom: 3rem; line-height: 1.2;
+}
+
+/* ── PHILOSOPHY STRIP ── */
+.philosophy-strip {
+  background: linear-gradient(135deg, #e8f7f5 0%, #f7fcfb 100%);
+  padding: 4rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.philosophy-inner {
+  max-width: 900px; margin: 0 auto; padding: 0 3rem;
+  display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center;
+}
+.philosophy-label {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--teal);
+  margin-bottom: 1rem;
+}
+.philosophy-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; font-style: italic;
+  color: #456f6a;
+}
+.philosophy-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 400; font-style: italic;
+  color: #173633;
+  line-height: 1.6;
+  border-left: 3px solid #1a7a6e;
+  padding-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+.philosophy-body {
+  font-size: 0.88rem; color: #456f6a;
+  line-height: 1.85;
+}
+
+/* ── PLACEMENTS ── */
+.placements { background: var(--cream); }
+.placement-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.placement-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px; padding: 2rem;
+  position: relative; overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.placement-card:hover {
+  box-shadow: 0 10px 48px rgba(26,122,110,0.1);
+  transform: translateY(-4px);
+}
+.placement-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, #1a7a6e, #29a89a);
+}
+.placement-ansat {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--mint-pale); color: var(--mint);
+  border: 1px solid var(--mint-light);
+  padding: 0.28rem 0.7rem; border-radius: 3px;
+  margin-bottom: 1rem;
+}
+.placement-ansat::before { content: '★'; }
+.placement-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem; font-weight: 600;
+  color: #152e2b; margin-bottom: 0.15rem;
+}
+.placement-meta {
+  font-size: 0.75rem; color: var(--sub);
+  margin-bottom: 0.25rem;
+}
+.placement-unit {
+  font-size: 0.72rem; color: var(--teal);
+  font-weight: 600; letter-spacing: 0.06em;
+  margin-bottom: 1rem;
+}
+.placement-bullets {
+  list-style: none; margin-bottom: 1.25rem;
+}
+.placement-bullets li {
+  font-size: 0.82rem; color: var(--sub);
+  padding: 0.2rem 0 0.2rem 1.1rem; position: relative;
+  line-height: 1.5;
+}
+.placement-bullets li::before {
+  content: '→'; position: absolute; left: 0;
+  color: var(--teal); font-size: 0.75rem;
+}
+.placement-ct-quote {
+  font-size: 0.8rem; font-style: italic; color: var(--sub);
+  border-left: 2px solid var(--teal-light);
+  padding-left: 0.85rem; line-height: 1.6;
+  background: var(--mist); border-radius: 0 6px 6px 0;
+  padding: 0.75rem 0.75rem 0.75rem 0.85rem;
+}
+.placement-ct-quote cite {
+  display: block; margin-top: 0.4rem;
+  font-style: normal; font-weight: 600;
+  font-size: 0.73rem; color: var(--teal);
+}
+
+/* ── NEPAL SECTION ── */
+.nepal-section { background: var(--paper); }
+.nepal-grid {
+  display: grid; grid-template-columns: 1fr 1.4fr;
+  gap: 5rem; align-items: start;
+}
+.nepal-sticky { position: sticky; top: 80px; }
+.nepal-badge-row {
+  display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;
+}
+.nepal-stat-block {
+  background: var(--white);
+  border: 1px solid var(--border); border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  display: flex; align-items: center; gap: 1.25rem;
+}
+.nepal-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; font-weight: 700;
+  color: var(--teal); line-height: 1; flex-shrink: 0; min-width: 60px;
+}
+.nepal-stat-text { font-size: 0.78rem; color: var(--sub); }
+.nepal-ref-box {
+  background: #d4f0ec;
+  border-radius: 10px; padding: 1.25rem 1.5rem;
+  border-left: 3px solid #1a7a6e;
+}
+.nepal-ref-label {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem;
+}
+.nepal-ref-text {
+  font-size: 0.8rem; color: var(--text); font-style: italic;
+}
+.nepal-detail-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+.nepal-detail-item {
+  background: var(--white);
+  border: 1px solid var(--border); border-radius: 10px;
+  padding: 1.1rem 1.4rem;
+  font-size: 0.85rem; color: var(--text);
+  display: flex; gap: 0.75rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.nepal-detail-item:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transform: translateX(3px);
+}
+.nepal-detail-item::before {
+  content: '—';
+  color: var(--teal); flex-shrink: 0; font-weight: 600;
+}
+
+/* ── EMPLOYMENT ── */
+.employment-section { background: var(--cream); }
+.timeline { position: relative; padding-left: 2.5rem; }
+.timeline::before {
+  content: ''; position: absolute; left: 5px; top: 10px; bottom: 10px;
+  width: 1px; background: var(--border);
+}
+.timeline-item { position: relative; margin-bottom: 3rem; }
+.timeline-dot {
+  position: absolute; left: -2.5rem; top: 6px;
+  width: 11px; height: 11px; border-radius: 50%;
+  background: var(--teal); border: 2px solid var(--cream);
+  box-shadow: 0 0 0 3px rgba(26,122,110,0.2);
+}
+.timeline-header {
+  display: flex; align-items: baseline; flex-wrap: wrap;
+  gap: 0.5rem 1rem; margin-bottom: 0.2rem;
+}
+.timeline-role {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem; font-weight: 600; color: #152e2b;
+}
+.timeline-date {
+  font-size: 0.72rem; color: var(--teal); font-weight: 600;
+  letter-spacing: 0.06em; background: #d4f0ec;
+  padding: 0.18rem 0.6rem; border-radius: 3px;
+}
+.timeline-org {
+  font-size: 0.82rem; color: var(--mint); font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+.timeline-bullets { list-style: none; }
+.timeline-bullets li {
+  font-size: 0.83rem; color: var(--sub); line-height: 1.55;
+  padding: 0.25rem 0 0.25rem 1.1rem; position: relative;
+}
+.timeline-bullets li::before {
+  content: '·'; position: absolute; left: 0;
+  color: var(--teal); font-size: 1.4rem; line-height: 1.2;
+}
+
+/* ── CREDENTIALS ── */
+.credentials-section { background: var(--mist); }
+.cred-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.cred-card {
+  background: var(--white);
+  border: 1px solid var(--border); border-radius: 10px;
+  padding: 1.5rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.cred-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.07);
+  transform: translateY(-3px);
+}
+.cred-icon {
+  width: 38px; height: 38px; border-radius: 8px;
+  background: #d4f0ec; display: flex; align-items: center;
+  justify-content: center; font-size: 1.1rem; margin-bottom: 0.75rem;
+}
+.cred-title {
+  font-size: 0.82rem; font-weight: 600; color: #152e2b;
+  margin-bottom: 0.2rem; line-height: 1.3;
+}
+.cred-sub { font-size: 0.73rem; color: var(--sub); }
+.cred-status {
+  display: inline-block; margin-top: 0.5rem;
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.5rem; border-radius: 2px;
+}
+.cred-current { background: #d4f0ec; color: #1a7a6e; }
+.cred-pending { background: #c2ecea; color: #1a7a6e; }
+
+/* ── SELECTION CRITERIA ── */
+.criteria-section { background: var(--white); }
+.criteria-accordion { display: flex; flex-direction: column; gap: 0.75rem; }
+.criteria-item {
+  border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
+}
+.criteria-header {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1.25rem 1.5rem; cursor: pointer;
+  background: var(--paper);
+  transition: background 0.2s;
+  user-select: none;
+}
+.criteria-header:hover { background: var(--mist); }
+.criteria-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; font-weight: 700;
+  color: var(--teal); flex-shrink: 0; min-width: 28px;
+}
+.criteria-title {
+  font-size: 0.85rem; font-weight: 600; color: #152e2b;
+  flex: 1; line-height: 1.3;
+}
+.criteria-toggle {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: #d4f0ec; color: var(--teal);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; font-weight: 700; flex-shrink: 0;
+  transition: transform 0.3s, background 0.2s;
+}
+.criteria-item.open .criteria-toggle { transform: rotate(45deg); background: #1a7a6e; color: #173633; }
+.criteria-body {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding: 0 1.5rem;
+}
+.criteria-item.open .criteria-body {
+  max-height: 600px; padding: 1.25rem 1.5rem;
+}
+.criteria-text {
+  font-size: 0.87rem; color: var(--text); line-height: 1.85;
+  border-left: 3px solid var(--teal-pale); padding-left: 1.25rem;
+}
+
+/* ── SUPPORTING DOCS ── */
+.docs-section { background: var(--cream); }
+.docs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.doc-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 10px; padding: 1.5rem; text-align: center;
+}
+.doc-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+.doc-title { font-size: 0.82rem; font-weight: 600; color: #152e2b; margin-bottom: 0.3rem; }
+.doc-sub { font-size: 0.73rem; color: var(--sub); margin-bottom: 0.75rem; }
+.doc-verified {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--mint-pale); color: var(--mint);
+  padding: 0.2rem 0.6rem; border-radius: 3px;
+}
+.doc-verified::before { content: '✓'; }
+
+/* ── ABOUT ── */
+.about-section { background: var(--white); }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1.5fr;
+  gap: 5rem; align-items: start;
+}
+.about-profile-block {
+  position: sticky; top: 80px;
+}
+.about-quote-card {
+  background: #e8f7f5;
+  border-radius: 16px; padding: 2rem 2rem 2rem 2.5rem;
+  border-left: 4px solid var(--teal);
+  border: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+.about-quote-card p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.12rem;
+  font-style: normal;
+  font-weight: 500;
+  color: #173633;
+  line-height: 1.8;
+  margin-bottom: 0.75rem;
+}
+.about-quote-card cite {
+  font-size: 0.73rem;
+  font-style: normal;
+  color: #14796f;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.about-values { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.value-chip {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em;
+  padding: 0.28rem 0.75rem; border-radius: 4px;
+}
+.value-teal { background: #d4f0ec; color: #1a7a6e; }
+.value-mint { background: #c2ecea; color: #1a7a6e; }
+.value-ink { background: #e6f7f5; color: #1c3a36; }
+
+.about-text p {
+  font-size: 0.9rem; color: var(--sub);
+  margin-bottom: 1.1rem; line-height: 1.85;
+}
+.about-text p strong { color: #152e2b; font-weight: 600; }
+
+/* ── HEART OF A NURSE ── */
+.heart-section { background: var(--white); }
+.heart-intro {
+  max-width: 780px; margin-bottom: 3rem;
+}
+.heart-lead {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-style: italic; color: #152e2b;
+  line-height: 1.75; border-left: 3px solid var(--teal);
+  padding-left: 1.75rem;
+}
+.heart-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.heart-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 14px; padding: 2rem;
+  position: relative; overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.heart-card:hover {
+  box-shadow: 0 10px 40px rgba(26,122,110,0.1);
+  transform: translateY(-3px);
+}
+.heart-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #1a7a6e, #29a89a);
+}
+.heart-card-wide {
+  grid-column: 1 / -1;
+}
+.heart-card-icon {
+  font-size: 1.8rem; margin-bottom: 0.75rem;
+  width: 48px; height: 48px; border-radius: 10px;
+  background: var(--teal-pale);
+  display: flex; align-items: center; justify-content: center;
+}
+.heart-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem; font-weight: 600;
+  color: #152e2b; margin-bottom: 0.75rem; line-height: 1.35;
+}
+.heart-card-text {
+  font-size: 0.86rem; color: var(--sub); line-height: 1.85;
+}
+.heart-pillars {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2.5rem;
+  margin-top: 0.5rem;
+}
+.heart-pillar-label {
+  font-size: 0.82rem; font-weight: 700;
+  color: var(--teal); margin-bottom: 0.4rem;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.heart-pillar-label::before {
+  content: ''; width: 20px; height: 2px;
+  background: var(--teal); flex-shrink: 0;
+}
+.heart-pillar p {
+  font-size: 0.83rem; color: var(--sub); line-height: 1.75;
+}
+@media (max-width: 860px) {
+  .heart-grid { grid-template-columns: 1fr; }
+  .heart-pillars { grid-template-columns: 1fr; }
+  .heart-card-wide { grid-column: 1; }
+}
+
+/* ── FOOTER ── */
+footer {
+  background: #e8f7f5;
+  padding: 4rem 3rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+.footer-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; color: #173633; margin-bottom: 0.5rem;
+}
+.footer-name em { font-style: italic; color: var(--teal-light); }
+footer p { font-size: 0.8rem; color: #456f6a; margin-bottom: 0.3rem; }
+footer a { color: #14796f; text-decoration: none; }
+footer a:hover { color: #173633; }
+.footer-divider {
+  width: 60px; height: 1px; background: var(--teal);
+  margin: 1.5rem auto;
+}
+.footer-note {
+  font-size: 0.68rem; color: #5f837e;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+
+/* ── FADE IN ── */
+.fade { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.fade.visible { opacity: 1; transform: translateY(0); }
+.fade-l { opacity: 0; transform: translateX(-24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.fade-l.visible { opacity: 1; transform: translateX(0); }
+
+/* ── MOBILE ── */
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-left { padding: 4rem 2rem; }
+  .hero-right { padding: 3rem 2rem; }
+  .about-grid, .nepal-grid, .placement-grid, .cred-grid, .docs-grid { grid-template-columns: 1fr; }
+  .philosophy-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  .nav-links { display: none; }
+  nav { padding: 0 1.5rem; }
+  .container { padding: 0 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Kunti <span>Jaishi</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">Profile</a></li>
+    <li><a href="#placements">Placements</a></li>
+    <li><a href="#nepal">Nepal RN</a></li>
+    <li><a href="#employment">Employment</a></li>
+    <li><a href="#heart">Why I Choose Nursing</a></li>
+    <li><a href="#credentials">Credentials</a></li>
+  </ul>
+  <a href="mailto:kuntijoshi12@gmail.com" class="nav-cta">Contact</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span>NSW GradStart Applicant 2027</span>
+    </div>
+    <h1 class="hero-name">
+      Kunti
+      <em>Jaishi</em>
+    </h1>
+    <p class="hero-title">Graduate Registered Nurse &nbsp;·&nbsp; Master of Nursing (Graduate Entry)<br>Southern Cross University &nbsp;·&nbsp; Goonellabah NSW</p>
+    <p class="hero-strong-line">Graduate RN applicant with prior tertiary-hospital RN experience in Neurosurgery, Emergency and Critical Care.</p>
+    <ul class="hero-contact-list">
+      <li><a href="tel:0414003206"><span class="icon">📞</span>0414 003 206</a></li>
+      <li><a href="mailto:kuntijoshi12@gmail.com"><span class="icon">✉</span>kuntijoshi12@gmail.com</a></li>
+      <li><a href="#"><span class="icon">📍</span>Goonellabah NSW 2480</a></li>
+    </ul>
+    <div class="hero-badges">
+      <span class="badge badge-teal">AHPRA Eligible Dec 2026</span>
+      <span class="badge badge-sage">NNC Reg. No. 64962</span>
+      <span class="badge badge-white">WWCC Current</span>
+      <span class="badge badge-white">BLS / CPR Current</span>
+    </div>
+    <div class="skill-tags">
+      <span class="skill-tag">ISBAR</span>
+      <span class="skill-tag">Medication Safety</span>
+      <span class="skill-tag">Neurological Assessment</span>
+      <span class="skill-tag">Wound Care</span>
+      <span class="skill-tag">Deterioration Escalation</span>
+      <span class="skill-tag">Aged Care</span>
+      <span class="skill-tag">Community Nursing</span>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-stat-card fade">
+      <div class="hero-stat-num">18</div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat-body">
+        <div class="hero-stat-label">Months as Registered Nurse — Nepal</div>
+        <div class="hero-stat-sub">750-bed tertiary hospital · Neurosurgical, Emergency &amp; COVID ICU · Zero medication errors</div>
+      </div>
+    </div>
+    <div class="hero-stat-card fade" style="animation-delay:0.1s">
+      <div class="hero-stat-num">4×</div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat-body">
+        <div class="hero-stat-label">Excellent ANSAT Ratings</div>
+        <div class="hero-stat-sub">Community · Acute Medical / Surgical · Surgical / Orthopaedic · Medical / Aged Care</div>
+      </div>
+    </div>
+    <div class="hero-stat-card fade" style="animation-delay:0.2s">
+      <div class="hero-stat-num">3+</div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat-body">
+        <div class="hero-stat-label">Years in Australian Healthcare</div>
+        <div class="hero-stat-sub">AIN Team Leader · St Joseph's Nursing Home · Uniting NSW · Bupa Aged Care</div>
+      </div>
+    </div>
+    <div class="hero-stat-card fade" style="animation-delay:0.3s">
+      <div class="hero-stat-num">79%</div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat-body">
+        <div class="hero-stat-label">Bachelor of Science in Nursing — First Division</div>
+        <div class="hero-stat-sub">Purbanchal University · National Academy for Medical Sciences · 2020</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="container">
+    <p class="section-label">Professional Profile</p>
+    <h2>A nurse shaped by two healthcare systems</h2>
+    <div class="about-grid">
+      <div class="about-profile-block fade-l">
+        <div class="about-quote-card">
+          <p>"Kunti has been an excellent student and has brought a professional approach who likes to be challenged. She should be able to interview for new graduate programs or jobs as a new graduate with confidence."</p>
+          <cite>— Clinical Teacher, NNSW LHD, Community Nursing Placement 2026</cite>
+        </div>
+        <div style="margin-bottom:1rem;">
+          <div class="section-label" style="font-size:0.65rem;">Core Values</div>
+          <div class="about-values">
+            <span class="value-chip value-teal">Collaboration</span>
+            <span class="value-chip value-teal">Openness</span>
+            <span class="value-chip value-teal">Respect</span>
+            <span class="value-chip value-teal">Empowerment</span>
+            <span class="value-chip value-mint">Person-Centred Care</span>
+            <span class="value-chip value-mint">Cultural Competence</span>
+            <span class="value-chip value-ink">Clinical Excellence</span>
+            <span class="value-chip value-ink">Continuous Improvement</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-text fade">
+        <p>I am a clinically experienced Graduate Registered Nurse completing my <strong>Master of Nursing (Graduate Entry)</strong> at Southern Cross University, graduating December 2026. What sets me apart is <strong>18 months of genuine RN practice</strong> at a 750-bed tertiary hospital in Nepal — managing high-acuity neurosurgical patients, administering IV vasoactive medications, leading COVID-19 ward protocols, and earning a formal Matron commendation — before ever setting foot in an Australian clinical placement.</p>
+        <p>Since arriving in Australia, I have completed <strong>four clinical placements across NNSW LHD</strong> — community nursing (HITH, palliative, chronic disease), acute medical/surgical (Ward E10), surgical/orthopaedics (Ward F10), and medical/aged care (Byron Central Hospital) — all rated <strong>Excellent (ANSAT)</strong>. Clinical Teachers across all four placements explicitly endorsed me as ready for graduate employment.</p>
+        <p>I have spent over three years in <strong>Australian aged care and community health</strong>, including an AIN Team Leader role at St Joseph's Nursing Home where I oversee medication administration via MedCom, delegate daily care tasks, apply the DETECT deterioration framework, and support RNs without needing to be directed. I also work as a Care Worker with Uniting NSW, supporting NDIS and Home Care Package clients.</p>
+        <p>I am deeply committed to <strong>NSW Health's CORE Values</strong> and the NMBA standards for practice. I understand what Australian patients need, what Australian teams expect, and — having built my clinical foundations in a resource-limited setting — I do not take either for granted. I am ready to contribute from day one.</p>
+        <div class="achievement-strip">
+          <strong>Key achievement:</strong> Recognised by multiple Clinical Teachers across NNSW LHD for professionalism, initiative, safe practice and graduate readiness.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<div class="philosophy-strip">
+  <div class="philosophy-inner">
+    <div>
+      <div class="philosophy-label">Nursing Philosophy</div>
+      <div class="philosophy-heading">Why I chose nursing</div>
+    </div>
+    <div>
+      <div class="philosophy-quote fade">"Nursing is not something I do — it is how I see people. Every patient is a whole person with a story, not a condition to be managed."</div>
+      <p class="philosophy-body fade">My philosophy is rooted in dignity and presence. Having practised as an RN in Nepal and now studied within the Australian system, I have seen that the fundamentals of good nursing transcend borders: assess thoroughly, communicate clearly, escalate early, and never stop learning. As a graduate nurse, I am not starting from scratch — I am bringing real clinical judgement, refined over 18 months of genuine practice, into the Australian system.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PLACEMENTS -->
+<section class="placements" id="placements">
+  <div class="container">
+    <p class="section-label">Clinical Placements</p>
+    <h2>Four placements. Four Excellent ANSAT ratings.</h2>
+    <div class="placement-grid">
+
+      <div class="placement-card fade">
+        <span class="placement-ansat">Excellent ANSAT</span>
+        <div class="placement-title">Community Nursing — HITH, Palliative &amp; Chronic Disease</div>
+        <div class="placement-meta">Northern NSW LHD · Apr–May 2026</div>
+        <div class="placement-unit">NURS5015 · Final Placement</div>
+        <ul class="placement-bullets">
+          <li>Managed complex HITH caseloads: Baxter elastomeric infuser management, PICC line care, palliative symptom management, diabetes education, and vascular assessment.</li>
+          <li>Collaborated with MDT to coordinate goals-of-care family meeting for CALD palliative patient — raised documentation discrepancy before visit and ensured patient voice was central.</li>
+          <li>Recognised by Clinical Teacher for professional conduct, clinical initiative, and advocacy for patient autonomy.</li>
+        </ul>
+        <div class="placement-ct-quote">
+          "Kunti has been an excellent student and has brought a professional approach who likes to be challenged. If she keeps progressing, she should be able to interview for new graduate programs or jobs as a new graduate with confidence."
+          <cite>— Clinical Teacher, NNSW LHD</cite>
+        </div>
+      </div>
+
+      <div class="placement-card fade" style="transition-delay:0.1s">
+        <span class="placement-ansat">Excellent ANSAT</span>
+        <div class="placement-title">Ward E10 — Acute Medical / Surgical</div>
+        <div class="placement-meta">Lismore Base Hospital · Feb–Mar 2026</div>
+        <div class="placement-unit">NURS6001 · Formative &amp; Summative Excellent</div>
+        <ul class="placement-bullets">
+          <li>Set and achieved all self-directed clinical goals; proactively sought advanced learning including PICC awareness and critical care observation.</li>
+          <li>Identified post-TURP patient with early catheter obstruction — calculated fluid balance discrepancy, escalated promptly with structured findings before serious complication developed.</li>
+          <li>Recognised for early deterioration identification and inter-professional communication using ISBAR.</li>
+        </ul>
+        <div class="placement-ct-quote">
+          "Kunti had set very good and relevant goals for this placement. She has been very proactive throughout and has achieved her goals while on E10. Well done, Kunti!"
+          <cite>— Clinical Teacher, NNSW LHD</cite>
+        </div>
+      </div>
+
+      <div class="placement-card fade" style="transition-delay:0.15s">
+        <span class="placement-ansat">Excellent ANSAT</span>
+        <div class="placement-title">Ward F10 — Surgical / Orthopaedics</div>
+        <div class="placement-meta">Lismore Base Hospital · Jul–Aug 2025</div>
+        <div class="placement-unit">NURS5011</div>
+        <ul class="placement-bullets">
+          <li>Performed post-operative care: bladder irrigation, chronic wound management, IV fluid management, and surgical drain assessment in high-acuity orthopaedic setting.</li>
+          <li>Demonstrated strong growth in clinical prioritisation and time management across complex multi-patient workloads.</li>
+          <li>Applied 10 Rights of Medication Administration and ANTT technique consistently — zero medication errors.</li>
+        </ul>
+        <div class="placement-ct-quote">
+          "Kunti has demonstrated steady and meaningful growth… strong commitment to delivering safe, person-centred care… growing confidence, time management, and understanding of clinical prioritisation."
+          <cite>— Clinical Teacher, NNSW LHD</cite>
+        </div>
+      </div>
+
+      <div class="placement-card fade" style="transition-delay:0.2s">
+        <span class="placement-ansat">Excellent ANSAT</span>
+        <div class="placement-title">Inpatient Unit — Medical / Aged Care</div>
+        <div class="placement-meta">Byron Central Hospital · Jul 2025</div>
+        <div class="placement-unit">NURS5012</div>
+        <ul class="placement-bullets">
+          <li>Applied 10 Rights of Medication Administration, ISBAR handover, and ANTT technique — zero medication errors throughout rotation.</li>
+          <li>Delivered compassionate, culturally sensitive care to older patients with dementia and complex needs; advocated for patient dignity at all times.</li>
+          <li>Unanimously praised by all buddy nurses for enthusiasm, professionalism, and safe practice.</li>
+        </ul>
+        <div class="placement-ct-quote">
+          "All buddy nurses have expressed how fantastic you are. Kunti will continue to be a fantastic nurse. Well done."
+          <cite>— Clinical Teacher, NNSW LHD</cite>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NEPAL RN -->
+<section class="nepal-section" id="nepal">
+  <div class="container">
+    <p class="section-label">International RN Experience</p>
+    <h2>18 months as a Registered Nurse in Nepal</h2>
+    <div class="nepal-grid fade">
+      <div class="nepal-sticky">
+        <div class="nepal-badge-row">
+          <div class="nepal-stat-block">
+            <div class="nepal-stat-num">750</div>
+            <div class="nepal-stat-text">Bed tertiary referral hospital — Kathmandu Medical College Teaching Hospital</div>
+          </div>
+          <div class="nepal-stat-block">
+            <div class="nepal-stat-num">0</div>
+            <div class="nepal-stat-text">Medication errors across 18 months of full-time RN practice</div>
+          </div>
+          <div class="nepal-stat-block">
+            <div class="nepal-stat-num">6–8</div>
+            <div class="nepal-stat-text">High-acuity neurosurgical/medical patients per shift</div>
+          </div>
+        </div>
+        <div class="nepal-ref-box">
+          <div class="nepal-ref-label">Verified by</div>
+          <div class="nepal-ref-text">Matron Krishnashwari Duwal, Kathmandu Medical College — formal written commendation for sustained clinical excellence, professional conduct and mentorship, recorded in the department performance register.</div>
+        </div>
+      </div>
+      <ul class="nepal-detail-list">
+        <li class="nepal-detail-item">Managed 6–8 high-acuity neurosurgical and medical patients per shift, performing complete head-to-toe assessment, clinical monitoring, and care prioritisation across emergency and critical care environments.</li>
+        <li class="nepal-detail-item">Administered high-risk IV medications including vasoactive agents, anticoagulants, analgesics, and antibiotics with <strong>zero medication errors</strong> across 18 months of full-time RN practice.</li>
+        <li class="nepal-detail-item">Performed and interpreted neurological assessments (GCS, pupil response, limb strength grading), initiating escalation of deteriorating patients to neurosurgical registrar and intensivist teams.</li>
+        <li class="nepal-detail-item">Conducted advanced nursing procedures: NGT insertion, enteral feeding, urinary catheterisation, IV cannulation, central line care, ET suctioning, tracheostomy care, wound debridement, and drain management.</li>
+        <li class="nepal-detail-item">Led infection prevention and PPE compliance across the COVID-19 isolation ward, contributing to zero healthcare worker infections within the ward team throughout the pandemic rotation.</li>
+        <li class="nepal-detail-item">Designed and delivered structured education sessions for junior and student nurses on medication safety, neurological assessment, and ICU equipment.</li>
+        <li class="nepal-detail-item">Identified inconsistency in GCS documentation across the neurosurgical ward, raised it with the Matron, led two education sessions for junior nurses, and saw measurable improvement confirmed at ward audit.</li>
+        <li class="nepal-detail-item">Received a formal commendation from Ward Matron for sustained clinical excellence, professional conduct, and mentorship — recorded in the department performance register.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EMPLOYMENT -->
+<section class="employment-section" id="employment">
+  <div class="container">
+    <p class="section-label">Australian Employment History</p>
+    <h2>Over three years in Australian healthcare</h2>
+    <div class="timeline fade">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-header">
+          <div class="timeline-role">AIN — Team Leader</div>
+          <div class="timeline-date">Jan 2025 – Present</div>
+        </div>
+        <div class="timeline-org">St Joseph's Nursing Home · Lismore NSW</div>
+        <ul class="timeline-bullets">
+          <li>Led and delegated daily care tasks across the team, coordinating shift handover, prioritising resident needs, and escalating clinical concerns to the supervising RN without needing to be directed.</li>
+          <li>Administered medications via MedCom system with accurate recording and adverse reaction reporting; applied DETECT deterioration escalation framework per Aged Care Quality Standards.</li>
+          <li>Ensured team compliance with the Aged Care Code of Conduct and Quality Standards; formally recognised by Nursing Unit Manager for reliable leadership, calm under pressure, and consistent person-centred care.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-header">
+          <div class="timeline-role">Care Worker</div>
+          <div class="timeline-date">Aug 2025 – Present</div>
+        </div>
+        <div class="timeline-org">Uniting NSW/ACT · Lismore NSW</div>
+        <ul class="timeline-bullets">
+          <li>Delivered individualised community care to NDIS and Home Care Package clients: ADLs, mobility support, meal preparation, medication prompting, and therapeutic relationship-building with clients experiencing cognitive decline and disability.</li>
+          <li>Maintained accurate NDIS care notes and incident documentation compliant with the NDIS Quality and Safeguards Framework after every visit.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-header">
+          <div class="timeline-role">Care Worker</div>
+          <div class="timeline-date">Jul 2023 – Nov 2024</div>
+        </div>
+        <div class="timeline-org">Bupa Aged Care · Sydney NSW</div>
+        <ul class="timeline-bullets">
+          <li>Provided comprehensive personal care to residents with dementia, ABI, and age-related frailty across a high-dependency facility; monitored and documented changes in condition, escalating concerns via ISBAR.</li>
+          <li>Received commendation from family members and nursing staff for compassionate, dignified care and initiative during busy shifts.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-header">
+          <div class="timeline-role">Registered Nurse — Emergency, High Care &amp; Neurosurgical ICU</div>
+          <div class="timeline-date">Oct 2021 – Apr 2023</div>
+        </div>
+        <div class="timeline-org">Kathmandu Medical College Teaching Hospital · Nepal (750-bed tertiary centre)</div>
+        <ul class="timeline-bullets">
+          <li>Full-time RN scope of practice across Emergency, Neurosurgery High Care, Neurosurgical ICU, and COVID-19 Isolation Ward — 48 hours per week.</li>
+          <li>See Nepal RN Experience section for full clinical detail.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="credentials-section" id="credentials">
+  <div class="container">
+    <p class="section-label">Credentials &amp; Registrations</p>
+    <h2>Qualifications &amp; certifications</h2>
+    <div class="cred-grid fade">
+      <div class="cred-card">
+        <div class="cred-icon">🎓</div>
+        <div class="cred-title">Master of Nursing (Graduate Entry)</div>
+        <div class="cred-sub">Southern Cross University · Lismore NSW · Expected Dec 2026</div>
+        <span class="cred-status cred-pending">In Progress</span>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">📋</div>
+        <div class="cred-title">AHPRA / NMBA Registration</div>
+        <div class="cred-sub">Eligible for full registration upon graduation Dec 2026</div>
+        <span class="cred-status cred-pending">Eligible Dec 2026</span>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">🩺</div>
+        <div class="cred-title">Nepal Nursing Council — RN</div>
+        <div class="cred-sub">Registration No. 64962 · Issued 5 Sep 2021</div>
+        <span class="cred-status cred-current">Registered</span>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">📚</div>
+        <div class="cred-title">Bachelor of Science in Nursing</div>
+        <div class="cred-sub">Purbanchal University · Nepal · 2020 · First Division (79.20%)</div>
+        <span class="cred-status cred-current">Awarded</span>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">👦</div>
+        <div class="cred-title">WWCC — Working With Children</div>
+        <div class="cred-sub">WWC2697245E · Paid Worker · NSW</div>
+        <span class="cred-status cred-current">Current</span>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">❤️</div>
+        <div class="cred-title">BLS / CPR Certification</div>
+        <div class="cred-sub">Basic Life Support · Nationally recognised</div>
+        <span class="cred-status cred-current">Current</span>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">🚑</div>
+        <div class="cred-title">First Aid Certificate</div>
+        <div class="cred-sub">Current · Nationally Recognised</div>
+        <span class="cred-status cred-current">Current</span>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">💪</div>
+        <div class="cred-title">Manual Handling</div>
+        <div class="cred-sub">Workplace Certified</div>
+        <span class="cred-status cred-current">Current</span>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">🛡️</div>
+        <div class="cred-title">NSW Health Immunisation</div>
+        <div class="cred-sub">Fully compliant with NSW Health requirements</div>
+        <span class="cred-status cred-current">Compliant</span>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">🌐</div>
+        <div class="cred-title">English Proficiency — OET</div>
+        <div class="cred-sub">Meets NMBA English language requirements</div>
+        <span class="cred-status cred-current">Verified</span>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">💊</div>
+        <div class="cred-title">Medication Administration</div>
+        <div class="cred-sub">MedCom System · St Joseph's · NAMS Pharmacology Competency (C)</div>
+        <span class="cred-status cred-current">Competent</span>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">🔍</div>
+        <div class="cred-title">National Police Check</div>
+        <div class="cred-sub">Current · Nationally recognised</div>
+        <span class="cred-status cred-current">Current</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HEART OF A NURSE -->
+<section class="heart-section" id="heart">
+  <div class="container">
+    <p class="section-label">The Nurse I Am &amp; The Nurse I Will Be</p>
+    <h2>Why I chose nursing — and why it chose me</h2>
+
+    <div class="heart-intro fade">
+      <p class="heart-lead">I chose nursing because I cannot imagine doing anything else. From my training in Kathmandu to my clinical placements in NSW, I have learned that nursing is not simply a task performed on a patient — it is a relationship formed <em>with</em> a person at their most vulnerable. That understanding guides every clinical decision I make.</p>
+    </div>
+
+    <div class="heart-grid fade">
+
+      <div class="heart-card">
+        <div class="heart-card-icon">🌏</div>
+        <div class="heart-card-title">I come from a place where healthcare is a privilege, not a right</div>
+        <p class="heart-card-text">Growing up in rural Nepal, I watched people in my community go without care they desperately needed — not because medicine couldn't help them, but because there was nobody there to deliver it with skill and compassion. That image never left me. It is why I pushed myself through a four-year nursing degree, sat the National Licensure Examination, and walked onto a neurosurgical ward as a newly registered nurse. Every patient I care for is someone's family. I have never forgotten what it feels like to be on the other side of that.</p>
+      </div>
+
+      <div class="heart-card">
+        <div class="heart-card-icon">🧠</div>
+        <div class="heart-card-title">I believe clinical excellence and human compassion are inseparable</div>
+        <p class="heart-card-text">Some nurses are technically skilled. Some are warm and kind. The best nurses are both, at the same time, without compromise. In 18 months managing high-acuity neurosurgical patients in Nepal, I learned that a missed GCS change can cost a life — and that a frightened patient who doesn't trust their nurse will never tell you what you need to know. I trained myself to be rigorous and present simultaneously. I listen before I assess. I explain before I act. I have never filed a medication error, not because I was lucky, but because I take that responsibility seriously every single time.</p>
+      </div>
+
+      <div class="heart-card">
+        <div class="heart-card-icon">🤝</div>
+        <div class="heart-card-title">I want to serve the Australian community that welcomed me</div>
+        <p class="heart-card-text">Australia gave me the opportunity to rebuild my nursing career within a world-class health system. I have spent three years in aged care — not waiting to become a "real" nurse, but genuinely learning how Australians age, how families grieve, how dignity looks in a residential setting at 2am. Northern NSW is a region with real healthcare need: ageing population, rural access challenges, cultural diversity. I want to be part of solving that. I am not seeking a graduate program for a title — I am seeking it because I am ready to give something back to this community that has given me so much.</p>
+      </div>
+
+      <div class="heart-card">
+        <div class="heart-card-icon">📈</div>
+        <div class="heart-card-title">My goal is to grow into a specialist nurse who never stops learning</div>
+        <p class="heart-card-text">My immediate goal is to consolidate my skills as a safe, confident graduate nurse in an acute NSW Health setting. But my longer-term vision is to specialise — I am drawn to critical care and neuroscience nursing, shaped by my experience in Nepal's neurosurgical ICU and the satisfaction of recognising deterioration before it becomes crisis. I also want to contribute to nursing education, mentoring new graduates the way experienced nurses mentored me. Nursing is not a destination. It is a lifelong commitment to being better for the people in your care.</p>
+      </div>
+
+      <div class="heart-card heart-card-wide">
+        <div class="heart-card-icon">✨</div>
+        <div class="heart-card-title">What makes me a good nurse — in my own words</div>
+        <div class="heart-pillars">
+          <div class="heart-pillar">
+            <div class="heart-pillar-label">I notice what others miss</div>
+            <p>Whether it is a post-TURP patient with dropping catheter output, a withdrawn patient concealing pain, or a documentation inconsistency before a home visit — I am trained to look beneath the obvious. Clinical reasoning is a habit for me, not a response to crisis.</p>
+          </div>
+          <div class="heart-pillar">
+            <div class="heart-pillar-label">I speak up, always</div>
+            <p>I raised a falls communication gap at Lismore Base. I flagged a medication plan discrepancy before a palliative home visit. In Nepal, I led ward education after identifying a GCS documentation inconsistency. Speaking up — respectfully and clearly — is something I do because patients depend on it.</p>
+          </div>
+          <div class="heart-pillar">
+            <div class="heart-pillar-label">I bring two healthcare systems into one practice</div>
+            <p>I understand resource constraints, high patient loads, and the weight of independent clinical decisions from Nepal. And I understand Australian systems, documentation standards, team culture and person-centred models from three years of local practice. That combination is rare and genuinely useful.</p>
+          </div>
+          <div class="heart-pillar">
+            <div class="heart-pillar-label">I care about people, not just patients</div>
+            <p>I remember names. I learn what matters to each resident at St Joseph's — when they like their morning routine, what music they enjoy, which family member they worry about. That is not extra. That is nursing. A patient who feels seen heals differently to one who feels processed.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORTING DOCS -->
+<section class="docs-section" id="docs">
+  <div class="container">
+    <p class="section-label">Supporting Documentation</p>
+    <h2>Verified credentials on file</h2>
+    <div class="docs-grid fade">
+      <div class="doc-card">
+        <div class="doc-icon">📄</div>
+        <div class="doc-title">KMC Employment Letter</div>
+        <div class="doc-sub">Kathmandu Medical College — Signed by Matron Krishnashwari Duwal · April 2023</div>
+        <span class="doc-verified">Verified</span>
+      </div>
+      <div class="doc-card">
+        <div class="doc-icon">🎓</div>
+        <div class="doc-title">NAMS Academic Transcript</div>
+        <div class="doc-sub">Purbanchal University — 79.20%, First Division · Issued Aug 2021</div>
+        <span class="doc-verified">Verified</span>
+      </div>
+      <div class="doc-card">
+        <div class="doc-icon">📋</div>
+        <div class="doc-title">NAMS Clinical Practice Records</div>
+        <div class="doc-sub">4-year clinical rotation log across 20+ facilities · Principal certified</div>
+        <span class="doc-verified">Verified</span>
+      </div>
+      <div class="doc-card">
+        <div class="doc-icon">💊</div>
+        <div class="doc-title">Pharmacology Competency Certificate</div>
+        <div class="doc-sub">NAMS Statement of Attainment — All criteria: Competent</div>
+        <span class="doc-verified">Verified</span>
+      </div>
+      <div class="doc-card">
+        <div class="doc-icon">🏥</div>
+        <div class="doc-title">Nepal Nursing Council Certificate</div>
+        <div class="doc-sub">Registered Nurse — Reg. No. 64962 · Issued 5 Sep 2021</div>
+        <span class="doc-verified">Verified</span>
+      </div>
+      <div class="doc-card">
+        <div class="doc-icon">📝</div>
+        <div class="doc-title">NAMS Recommendation Letter</div>
+        <div class="doc-sub">Principal Ram Bahadur Shrestha — grades described as exemplary</div>
+        <span class="doc-verified">Verified</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Kunti <em>Jaishi</em></div>
+  <div class="footer-divider"></div>
+  <p>Graduate Registered Nurse · Goonellabah NSW 2480</p>
+  <p><a href="tel:0414003206">0414 003 206</a> &nbsp;·&nbsp; <a href="mailto:kuntijoshi12@gmail.com">kuntijoshi12@gmail.com</a></p>
+  <div class="footer-divider"></div>
+  <p class="footer-note">NSW Health GradStart 2027 Applicant · AHPRA eligible Dec 2026 · Master of Nursing (Grad Entry) — Southern Cross University</p>
+</footer>
+
+<script>
+// Accordion
+function toggleCriteria(header) {
+  const item = header.parentElement;
+  item.classList.toggle('open');
+}
+
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade, .fade-l').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
