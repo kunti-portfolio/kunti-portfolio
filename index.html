@@ -193,7 +193,6 @@ nav {
   flex-shrink: 0;
 }
 
-
 .hero-strong-line {
   font-size: 1rem;
   font-weight: 600;
@@ -482,50 +481,6 @@ h2 {
 .cred-current { background: #d4f0ec; color: #1a7a6e; }
 .cred-pending { background: #c2ecea; color: #1a7a6e; }
 
-/* ── SELECTION CRITERIA ── */
-.criteria-section { background: var(--white); }
-.criteria-accordion { display: flex; flex-direction: column; gap: 0.75rem; }
-.criteria-item {
-  border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
-}
-.criteria-header {
-  display: flex; align-items: center; gap: 1rem;
-  padding: 1.25rem 1.5rem; cursor: pointer;
-  background: var(--paper);
-  transition: background 0.2s;
-  user-select: none;
-}
-.criteria-header:hover { background: var(--mist); }
-.criteria-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem; font-weight: 700;
-  color: var(--teal); flex-shrink: 0; min-width: 28px;
-}
-.criteria-title {
-  font-size: 0.85rem; font-weight: 600; color: #152e2b;
-  flex: 1; line-height: 1.3;
-}
-.criteria-toggle {
-  width: 24px; height: 24px; border-radius: 50%;
-  background: #d4f0ec; color: var(--teal);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.7rem; font-weight: 700; flex-shrink: 0;
-  transition: transform 0.3s, background 0.2s;
-}
-.criteria-item.open .criteria-toggle { transform: rotate(45deg); background: #1a7a6e; color: #173633; }
-.criteria-body {
-  max-height: 0; overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.3s ease;
-  padding: 0 1.5rem;
-}
-.criteria-item.open .criteria-body {
-  max-height: 600px; padding: 1.25rem 1.5rem;
-}
-.criteria-text {
-  font-size: 0.87rem; color: var(--text); line-height: 1.85;
-  border-left: 3px solid var(--teal-pale); padding-left: 1.25rem;
-}
-
 /* ── SUPPORTING DOCS ── */
 .docs-section { background: var(--cream); }
 .docs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
@@ -594,8 +549,9 @@ h2 {
 
 /* ── HEART OF A NURSE ── */
 .heart-section { background: var(--white); }
+
 .heart-intro {
-  max-width: 780px; margin-bottom: 3rem;
+  max-width: 780px; margin-bottom: 3.5rem;
 }
 .heart-lead {
   font-family: 'Playfair Display', serif;
@@ -604,64 +560,80 @@ h2 {
   line-height: 1.75; border-left: 3px solid var(--teal);
   padding-left: 1.75rem;
 }
-.heart-grid {
+
+/* narrative blocks */
+.heart-narrative { display: flex; flex-direction: column; gap: 2.5rem; margin-bottom: 3rem; }
+.heart-narrative-block {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+.heart-narrative-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: var(--teal-pale);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; flex-shrink: 0; margin-top: 0.2rem;
+}
+.heart-narrative-content {}
+.heart-narrative-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; font-weight: 600;
+  color: #152e2b; margin-bottom: 0.6rem; line-height: 1.35;
+}
+.heart-narrative-text {
+  font-size: 0.88rem; color: var(--sub); line-height: 1.85;
+}
+
+/* strengths grid */
+.heart-strengths-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem; font-weight: 600;
+  color: #152e2b; margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.heart-strengths-heading::before {
+  content: '✨';
+  font-size: 1.3rem;
+}
+.heart-strengths {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
-.heart-card {
+.heart-strength-card {
   background: var(--paper);
   border: 1px solid var(--border);
-  border-radius: 14px; padding: 2rem;
+  border-radius: 12px; padding: 1.75rem;
   position: relative; overflow: hidden;
   transition: box-shadow 0.25s, transform 0.25s;
 }
-.heart-card:hover {
-  box-shadow: 0 10px 40px rgba(26,122,110,0.1);
+.heart-strength-card:hover {
+  box-shadow: 0 8px 32px rgba(26,122,110,0.1);
   transform: translateY(-3px);
 }
-.heart-card::before {
+.heart-strength-card::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0; height: 3px;
   background: linear-gradient(90deg, #1a7a6e, #29a89a);
 }
-.heart-card-wide {
-  grid-column: 1 / -1;
-}
-.heart-card-icon {
-  font-size: 1.8rem; margin-bottom: 0.75rem;
-  width: 48px; height: 48px; border-radius: 10px;
-  background: var(--teal-pale);
-  display: flex; align-items: center; justify-content: center;
-}
-.heart-card-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.05rem; font-weight: 600;
-  color: #152e2b; margin-bottom: 0.75rem; line-height: 1.35;
-}
-.heart-card-text {
-  font-size: 0.86rem; color: var(--sub); line-height: 1.85;
-}
-.heart-pillars {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2.5rem;
-  margin-top: 0.5rem;
-}
-.heart-pillar-label {
+.heart-strength-title {
   font-size: 0.82rem; font-weight: 700;
-  color: var(--teal); margin-bottom: 0.4rem;
+  color: var(--teal); letter-spacing: 0.04em;
+  margin-bottom: 0.65rem;
   display: flex; align-items: center; gap: 0.5rem;
 }
-.heart-pillar-label::before {
-  content: ''; width: 20px; height: 2px;
+.heart-strength-title::before {
+  content: ''; width: 18px; height: 2px;
   background: var(--teal); flex-shrink: 0;
 }
-.heart-pillar p {
-  font-size: 0.83rem; color: var(--sub); line-height: 1.75;
+.heart-strength-text {
+  font-size: 0.85rem; color: var(--sub); line-height: 1.8;
 }
+
 @media (max-width: 860px) {
-  .heart-grid { grid-template-columns: 1fr; }
-  .heart-pillars { grid-template-columns: 1fr; }
-  .heart-card-wide { grid-column: 1; }
+  .heart-narrative-block { grid-template-columns: 1fr; gap: 0.75rem; }
+  .heart-strengths { grid-template-columns: 1fr; }
 }
 
 /* ── FOOTER ── */
@@ -734,8 +706,8 @@ footer a:hover { color: #173633; }
       Kunti
       <em>Jaishi</em>
     </h1>
-    <p class="hero-title">Graduate Nurse &nbsp;·&nbsp; Master of Nursing (Graduate Entry)<br>Southern Cross University &nbsp;·&nbsp; Goonellabah NSW</p>
-    <p class="hero-strong-line">Graduate nurse applicant bringing prior Registered Nurse experience across Neurosurgery, Emergency and Critical Care in tertiary hospital settings.</p>
+    <p class="hero-title">Graduate Nurse Applicant &nbsp;·&nbsp; Master of Nursing (Graduate Entry)<br>Southern Cross University &nbsp;·&nbsp; Goonellabah NSW</p>
+    <p class="hero-strong-line">Graduate Nurse Applicant bringing prior Registered Nurse experience across Neurosurgery, Emergency and Critical Care in tertiary hospital settings.</p>
     <ul class="hero-contact-list">
       <li><a href="tel:0414003206"><span class="icon">📞</span>0414 003 206</a></li>
       <li><a href="mailto:kuntijoshi12@gmail.com"><span class="icon">✉</span>kuntijoshi12@gmail.com</a></li>
@@ -749,6 +721,7 @@ footer a:hover { color: #173633; }
     </div>
     <div class="skill-tags">
       <span class="skill-tag">ISBAR</span>
+      <span class="skill-tag">Medication Administration</span>
       <span class="skill-tag">Medication Safety</span>
       <span class="skill-tag">Neurological Assessment</span>
       <span class="skill-tag">Wound Care</span>
@@ -934,8 +907,7 @@ footer a:hover { color: #173633; }
             <div class="nepal-stat-text">Bed tertiary referral hospital — Kathmandu Medical College Teaching Hospital</div>
           </div>
           <div class="nepal-stat-block">
-            <div class="nepal-stat-num">High-Risk IV
-</div>
+            <div class="nepal-stat-num">High-Risk IV</div>
             <div class="nepal-stat-text">Extensive high-risk medication administration experience in tertiary acute care practice</div>
           </div>
           <div class="nepal-stat-block">
@@ -991,8 +963,8 @@ footer a:hover { color: #173633; }
         </div>
         <div class="timeline-org">Uniting NSW/ACT · Lismore NSW</div>
         <ul class="timeline-bullets">
-          <li>Delivered individualised community care to NDIS and Home Care Package clients: ADLs, mobility support, meal preparation, medication prompting, and therapeutic relationship-building with clients experiencing cognitive decline and disability.</li>
-          <li>Maintained accurate NDIS care notes and incident documentation compliant with the NDIS Quality and Safeguards Framework after every visit.</li>
+          <li>Provided person-centred care to elderly residents in a residential aged care setting, supporting mobility, personal hygiene, nutrition, comfort, and emotional wellbeing while preserving dignity and independence.</li>
+          <li>Observed changes in resident condition, maintained accurate care documentation, communicated concerns to senior staff, and contributed to safe, collaborative care delivery.</li>
         </ul>
       </div>
 
@@ -1092,12 +1064,7 @@ footer a:hover { color: #173633; }
         <div class="cred-sub">Meets NMBA English language requirements</div>
         <span class="cred-status cred-current">Verified</span>
       </div>
-      <div class="cred-card">
-        <div class="cred-icon">💊</div>
-        <div class="cred-title">Medication Administration</div>
-        <div class="cred-sub">MedCom System · St Joseph's · NAMS Pharmacology Competency (C)</div>
-        <span class="cred-status cred-current">Competent</span>
-      </div>
+
       <div class="cred-card">
         <div class="cred-icon">🔍</div>
         <div class="cred-title">National Police Check</div>
@@ -1108,69 +1075,67 @@ footer a:hover { color: #173633; }
   </div>
 </section>
 
-<!-- HEART OF A NURSE -->
+<!-- HEART OF A NURSE — REPLACED SECTION -->
 <section class="heart-section" id="heart">
   <div class="container">
     <p class="section-label">The Nurse I Am &amp; The Nurse I Will Be</p>
-    <h2>The values that shape the nurse I am becoming</h2>
+    <h2>Why I chose nursing — and why it chose me</h2>
 
     <div class="heart-intro fade">
-      <p class="heart-lead">For me, nursing has never been simply a profession. It is a responsibility built on compassion, clinical competence, accountability, and genuine human connection. Every experience throughout my journey has strengthened the nurse I am today and the professional I continue striving to become.</p>
+      <p class="heart-lead">I chose nursing because, deep down, I have never been able to see myself doing anything else. From my early training in Kathmandu to my clinical placements across NSW, nursing has taught me that caring for people goes far beyond completing clinical tasks. It is about being present during some of the most vulnerable and uncertain moments of a person's life. That understanding continues to shape the way I communicate, think, and care as a future Registered Nurse.</p>
     </div>
 
-    <div class="heart-grid fade">
+    <div class="heart-strengths fade" style="margin-bottom: 2.5rem;">
 
-      <div class="heart-card">
-        <div class="heart-card-icon">🌏</div>
-        <div class="heart-card-title">My roots shaped why I chose nursing</div>
-        <p class="heart-card-text">Growing up in Nepal taught me that healthcare is something many people still struggle to access. Seeing people suffer without timely care developed my deep respect for nursing and inspired me to pursue a career where I could directly make a difference in people's lives during their most vulnerable moments.</p>
+      <div class="heart-strength-card">
+        <div class="heart-strength-title">I come from a place where healthcare is a privilege, not a right</div>
+        <p class="heart-strength-text">Growing up in rural Nepal, I watched people in my community go without care they urgently needed — not because medicine could not help them, but because access to skilled and compassionate healthcare was limited. That reality never left me. It is why I pushed myself through a four-year nursing degree, sat the National Licensure Examination, and began my career on a neurosurgical ward as a newly Registered Nurse. Every patient I care for is someone's family, and I have never forgotten what it feels like to stand on the other side of that experience.</p>
       </div>
 
-      <div class="heart-card">
-        <div class="heart-card-icon">🧠</div>
-        <div class="heart-card-title">A good nurse needs both skill and compassion</div>
-        <p class="heart-card-text">My experience working in high-acuity neurosurgical, emergency, and critical care environments taught me that strong clinical knowledge alone is never enough. Safe nursing requires critical thinking, attention to detail, calm decision-making, and genuine compassion. I believe excellent nursing happens when technical competence and human kindness work together.</p>
+      <div class="heart-strength-card">
+        <div class="heart-strength-title">I believe clinical excellence and human compassion are inseparable</div>
+        <p class="heart-strength-text">Some nurses are technically skilled. Some are warm and compassionate. The best nurses are both, at the same time, without compromise. During 18 months managing high-acuity neurosurgical patients in Nepal, I learned that a missed GCS change can cost a life — and that a frightened patient who does not trust their nurse may not share what they are experiencing. I trained myself to remain rigorous while being fully present. I listen before I assess. I explain before I act. Safe medication administration is a responsibility I approach with discipline, consistency, and a strong commitment to patient safety.</p>
       </div>
 
-      <div class="heart-card">
-        <div class="heart-card-icon">🤝</div>
-        <div class="heart-card-title">I value caring for the community I serve</div>
-        <p class="heart-card-text">My experience working across aged care, disability support, and community care in Australia has strengthened my understanding of dignity, respect, and person-centred care. I value building trust with patients and families and believe nursing is about supporting people as individuals, not simply managing a clinical condition.</p>
+      <div class="heart-strength-card">
+        <div class="heart-strength-title">I want to serve the Australian community that welcomed me</div>
+        <p class="heart-strength-text">Australia gave me the opportunity to rebuild my nursing career within a world-class healthcare system. I have spent three years in aged care, building a deeper understanding of how Australians age, how families grieve, and what dignity looks like in a residential setting at 2am. Northern NSW is a region with genuine healthcare need: an ageing population, rural access challenges, and diverse communities. I want to be part of that solution. I am not seeking a graduate program simply for a title — I am seeking the opportunity to give back to the community that has given me so much.</p>
       </div>
 
-      <div class="heart-card">
-        <div class="heart-card-icon">📈</div>
-        <div class="heart-card-title">Professional growth never stops</div>
-        <p class="heart-card-text">I believe becoming a strong Registered Nurse requires lifelong learning, reflection, and continuous improvement. My immediate goal is to develop into a safe and confident graduate nurse, while my long-term goal is to specialise in critical care and continue growing into a clinician who contributes meaningfully to both patients and the nursing profession.</p>
+      <div class="heart-strength-card">
+        <div class="heart-strength-title">My goal is to grow into a specialist nurse who never stops learning</div>
+        <p class="heart-strength-text">My immediate goal is to consolidate my skills as a safe and confident graduate nurse applicant within an acute NSW Health setting. My longer-term vision is to specialise in critical care and neuroscience nursing, shaped by my experience in Nepal's neurosurgical ICU and the satisfaction of recognising deterioration before it becomes crisis. I also hope to contribute to nursing education by supporting future graduates the way experienced nurses once supported me. Nursing is not a destination — it is a lifelong commitment to continuous growth.</p>
       </div>
 
-      <div class="heart-card heart-card-wide">
-        <div class="heart-card-icon">✨</div>
-        <div class="heart-card-title">What I believe makes a professional Registered Nurse</div>
-        <div class="heart-pillars">
-          <div class="heart-pillar">
-            <div class="heart-pillar-label">Clinical competence</div>
-            <p>A professional nurse must assess thoroughly, recognise deterioration early, make safe clinical decisions, and maintain strong evidence-based practice in every situation.</p>
-          </div>
+    </div>
 
-          <div class="heart-pillar">
-            <div class="heart-pillar-label">Professional accountability</div>
-            <p>Patient safety depends on responsibility. I believe every medication, documentation entry, and clinical decision must always be approached with discipline, accuracy, and professional integrity.</p>
-          </div>
+    <div class="fade">
+      <div class="heart-strengths-heading">What I believe makes me a good nurse</div>
+      <div class="heart-strengths">
 
-          <div class="heart-pillar">
-            <div class="heart-pillar-label">Communication and teamwork</div>
-            <p>Safe healthcare depends on effective teamwork. Good nurses communicate clearly, collaborate respectfully, escalate concerns early, and understand that patient outcomes improve when teams work together.</p>
-          </div>
-
-          <div class="heart-pillar">
-            <div class="heart-pillar-label">Compassion and human connection</div>
-            <p>Beyond clinical skills, I believe the best nurses genuinely care about people. Patients remember how they were treated, how they were listened to, and whether they felt respected during vulnerable moments.</p>
-          </div>
+        <div class="heart-strength-card">
+          <div class="heart-strength-title">I notice what others miss</div>
+          <p class="heart-strength-text">Whether it is a post-TURP patient with dropping catheter output, a withdrawn patient concealing pain, or a documentation discrepancy before a home visit — I am trained to look beyond the obvious. Clinical reasoning is a habit for me, not simply a response to crisis.</p>
         </div>
-      </div>
 
+        <div class="heart-strength-card">
+          <div class="heart-strength-title">I speak up when patient safety depends on it</div>
+          <p class="heart-strength-text">I raised a falls communication gap at Lismore Base Hospital. I identified a medication plan discrepancy before a palliative home visit. In Nepal, I led ward education after recognising a GCS documentation inconsistency. Speaking up respectfully and clearly is something I do because patient safety depends on it.</p>
+        </div>
+
+        <div class="heart-strength-card">
+          <div class="heart-strength-title">I bring two healthcare systems into one nursing practice</div>
+          <p class="heart-strength-text">My experience in Nepal taught me how to work under resource constraints, manage high patient loads, and make independent clinical decisions under pressure. My experience in Australia has strengthened my understanding of documentation standards, multidisciplinary teamwork, and person-centred care. Together, these experiences have shaped a broader and more adaptable nursing perspective.</p>
+        </div>
+
+        <div class="heart-strength-card">
+          <div class="heart-strength-title">I care about people, not just patients</div>
+          <p class="heart-strength-text">I remember names. I learn what matters to each resident at St Joseph's — their morning routine, the music they enjoy, and the family members they worry about. That is not extra care. That is nursing. A patient who feels genuinely seen experiences care very differently from someone who feels processed.</p>
+        </div>
+
+      </div>
     </div>
+
   </div>
 </section>
 
@@ -1224,19 +1189,13 @@ footer a:hover { color: #173633; }
 <footer>
   <div class="footer-name">Kunti <em>Jaishi</em></div>
   <div class="footer-divider"></div>
-  <p>Graduate Nurse · Goonellabah NSW 2480</p>
+  <p>Graduate Nurse Applicant · Goonellabah NSW 2480</p>
   <p><a href="tel:0414003206">0414 003 206</a> &nbsp;·&nbsp; <a href="mailto:kuntijoshi12@gmail.com">kuntijoshi12@gmail.com</a></p>
   <div class="footer-divider"></div>
   <p class="footer-note">NSW Health GradStart 2027 Applicant · AHPRA eligible Dec 2026 · Master of Nursing (Grad Entry) — Southern Cross University</p>
 </footer>
 
 <script>
-// Accordion
-function toggleCriteria(header) {
-  const item = header.parentElement;
-  item.classList.toggle('open');
-}
-
 // Scroll animations
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
